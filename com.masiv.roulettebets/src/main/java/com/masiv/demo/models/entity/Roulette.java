@@ -2,13 +2,13 @@ package com.masiv.demo.models.entity;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
-import org.springframework.data.redis.core.index.Indexed;
 
 @RedisHash("roulette")
 public class Roulette implements Serializable{
 	
-	@Indexed
+	@Id
 	private int idRoulette;
 	private boolean state;
 	private int winNumber;
