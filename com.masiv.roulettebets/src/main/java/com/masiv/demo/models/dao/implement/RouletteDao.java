@@ -31,8 +31,8 @@ public class RouletteDao implements IRouletteDao{
 	}
 	
 	@Override
-	public Map<String, Roulette> findAll() {
-		return hashOperations.entries(ROULETTE_KEY);
+	public long countAll() {
+		return hashOperations.size(ROULETTE_KEY);
 	}
 
 	@Override

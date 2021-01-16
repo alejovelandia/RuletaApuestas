@@ -2,8 +2,8 @@ package com.masiv.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masiv.demo.service.IRouletteService;
@@ -21,7 +21,7 @@ public class RouletteController {
 	}
 	
 	@GetMapping("/activate")
-	public boolean activate(@PathVariable("id_roulette") final int id_roulette) {
+	public boolean activate(@RequestParam("id_roulette") final int id_roulette) {
 		return rouletteService.activate(id_roulette);
 	}
 	

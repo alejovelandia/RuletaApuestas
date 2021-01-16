@@ -30,8 +30,7 @@ public class RouletteServiceImpl implements IRouletteService{
 	
 	@Override
 	public int newId() {
-		Map<String, Roulette> roulettes = rouletteDao.findAll();
-		return roulettes.size() + 1;
+		return (int) (rouletteDao.countAll() + 1);
 	}
 
 	@Override

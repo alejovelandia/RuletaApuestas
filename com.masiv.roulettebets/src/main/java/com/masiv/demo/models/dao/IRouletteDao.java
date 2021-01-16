@@ -8,7 +8,7 @@ public interface IRouletteDao {
 	
 	public void save(Roulette roulette);
 	
-	public Map<String, Roulette> findAll();
+	public long countAll();
 	
 	public Roulette findById(int id_roulette);
 	
