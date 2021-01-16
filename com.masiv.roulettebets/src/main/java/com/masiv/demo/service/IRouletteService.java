@@ -9,6 +9,8 @@ public interface IRouletteService {
 	
 	public int save();
 	
-	public boolean activate(int idRoulette); 
+	public boolean activate(int idRoulette);
+	
+	public int newId();
 
 }

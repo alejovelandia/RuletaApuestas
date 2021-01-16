@@ -1,11 +1,17 @@
 package com.masiv.demo.models.dao;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.util.Map;
 
 import com.masiv.demo.models.entity.Roulette;
 
-@Repository
-public interface IRouletteDao extends CrudRepository<Roulette, Integer>{
+public interface IRouletteDao {
+	
+	public void save(Roulette roulette);
+	
+	public Map<String, Roulette> findAll();
+	
+	public Roulette findById(int id_roulette);
+	
+	public void update(Roulette roulette);
 
 }

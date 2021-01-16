@@ -13,6 +13,11 @@ public class Roulette implements Serializable{
 	private boolean state;
 	private int winNumber;
 	
+	public Roulette(int idRoulette) {
+		super();
+		this.idRoulette = idRoulette;
+	}
+	
 	public int getIdRoulette() {
 		return idRoulette;
 	}
