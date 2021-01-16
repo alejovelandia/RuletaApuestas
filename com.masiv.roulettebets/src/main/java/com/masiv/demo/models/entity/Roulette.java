@@ -2,13 +2,8 @@ package com.masiv.demo.models.entity;
 
 import java.io.Serializable;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-
-@RedisHash("roulette")
 public class Roulette implements Serializable{
 	
-	@Id
 	private int idRoulette;
 	private boolean state;
 	private int winNumber;

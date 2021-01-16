@@ -1,8 +1,7 @@
 package com.masiv.demo.models.dao;
 
-import java.util.Map;
-
 import com.masiv.demo.models.entity.Roulette;
+import com.masiv.demo.models.entity.Bet;
 
 public interface IRouletteDao {
 	
