@@ -10,7 +10,7 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
 
 @Configuration
-@ComponentScan("com.masiv.demo.d.config")
+@ComponentScan("com.masiv.demo.config")
 @EnableRedisRepositories(basePackages = "com.masiv.demo.models.dao")
 @PropertySource("classpath:application.properties")
 public class RedisConfig {
