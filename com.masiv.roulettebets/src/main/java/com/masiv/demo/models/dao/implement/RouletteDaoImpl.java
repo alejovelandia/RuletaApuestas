@@ -1,5 +1,6 @@
 package com.masiv.demo.models.dao.implement;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.redis.core.HashOperations;
@@ -37,6 +38,11 @@ public class RouletteDaoImpl extends BaseDao implements IRouletteDao{
 	@Override
 	public void update(Roulette roulette) {
 		save(roulette);
+	}
+
+	@Override
+	public List<Roulette> findAll() {
+		return hashOperations.values(ROULETTE_KEY);
 	}
 
 }

@@ -6,7 +6,6 @@ public class Roulette implements Serializable{
 	
 	private int idRoulette;
 	private boolean state;
-	private int winNumber;
 	
 	public Roulette(int idRoulette) {
 		super();
@@ -29,14 +28,6 @@ public class Roulette implements Serializable{
 		this.state = state;
 	}
 	
-	public int getWinNumber() {
-		return winNumber;
-	}
-
-	public void setWinNumber(int winNumber) {
-		this.winNumber = winNumber;
-	}
-
 	private static final long serialVersionUID = 1L;
 	
 }

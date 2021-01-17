@@ -1,5 +1,7 @@
 package com.masiv.demo.service.implement;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +67,11 @@ public class RouletteServiceImpl implements IRouletteService{
 	public int getWinerNumber() {
 		double winnerNumber =  Math.random() * Integer.parseInt(maxNumberBet);
 		return (int) winnerNumber;
+	}
+
+	@Override
+	public List<Roulette> findAll() {
+		return rouletteDao.findAll();
 	}
 
 }

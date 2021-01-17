@@ -1,5 +1,7 @@
 package com.masiv.demo.service;
 
+import java.util.List;
+
 import com.masiv.demo.models.entity.Roulette;
 
 public interface IRouletteService {
@@ -15,5 +17,7 @@ public interface IRouletteService {
 	public boolean validateExist(int idRoulette);
 	
 	public int getWinerNumber();
+	
+	public List<Roulette> findAll();
 	
 }

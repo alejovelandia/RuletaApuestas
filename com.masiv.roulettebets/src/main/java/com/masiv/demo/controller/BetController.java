@@ -1,7 +1,6 @@
 package com.masiv.demo.controller;
 
 import java.math.BigDecimal;
-import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +36,7 @@ public class BetController {
 	
 	Map<String, Object> response;
 
-	@RequestMapping("/create")
+	@PostMapping("/create")
 	public ResponseEntity<?> create(@RequestParam(value = "id_roulette", required = true) final int id_roulette,
 							@RequestParam(value = "number", required = false) @Min(0) @Max(36) final Integer number, 
 							@RequestParam(value = "color", required = false) final String color,

@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masiv.demo.models.entity.Bet;
+import com.masiv.demo.models.entity.Roulette;
 import com.masiv.demo.service.IBetService;
 import com.masiv.demo.service.IRouletteService;
 
@@ -28,17 +31,17 @@ public class RouletteController {
 	
 	Map<String, Object> response;
 	
-	@GetMapping("/create")
+	@PostMapping("/create")
 	public int create() {
 		return rouletteService.save();
 	}
 	
-	@GetMapping("/activate")
+	@PutMapping("/activate")
 	public boolean activate(@RequestParam(value = "id_roulette", required = true) final int id_roulette) {
 		return rouletteService.activate(id_roulette);
 	}
 	
-	@GetMapping("/close")
+	@PutMapping("/close")
 	public ResponseEntity<?> close(@RequestParam(value = "id_roulette", required = true) final int id_roulette) {
 		
 		response = new HashMap();
@@ -48,6 +51,11 @@ public class RouletteController {
 		}
 		findBetByRouletteWithWinner(id_roulette);
 		return new ResponseEntity<Map<String, Object>>(response,HttpStatus.OK);
+	}
+	
+	@GetMapping("/list")
+	public List<Roulette> list() {
+		return rouletteService.findAll();
 	}
 	
 	private void validateExistRoulette(int id_roulette) {
