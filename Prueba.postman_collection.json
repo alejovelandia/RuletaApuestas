@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "8bb17b4e-e12a-4649-a5e6-a9789b855ee3",
+		"name": "Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/api/roulette/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/roulette/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"roulette",
+						"create"
+					]
+				},
+				"description": "Creación de una nueva ruleta de apuestas\r\nRetorna el id generado"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/roulette/activate?id_roulette=2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/roulette/activate?id_roulette=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"roulette",
+						"activate"
+					],
+					"query": [
+						{
+							"key": "id_roulette",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/bet/create?id_roulette=2&number=20&amount=1000",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "IdUser",
+						"value": "2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/bet/create?id_roulette=6&color=ROJO&amount=1000",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"bet",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id_roulette",
+							"value": "6"
+						},
+						{
+							"key": "color",
+							"value": "ROJO"
+						},
+						{
+							"key": "amount",
+							"value": "1000"
+						}
+					]
+				},
+				"description": "Petición para crear una nueva apuesta\r\nDebe ingresar un id de ruleta existente\r\nLa ruleta sleccionada debe estar activa\r\nDebe ingresar número o color(solo una de las dos)\r\nEn caso de ingresar número debe estar entre 0 y 36\r\nEn caso de ingresar color debe ser ROJO o NEGRO\r\nDebe ingresar el monto apostado, este debe ser menor a 10000"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/bet/create?id_roulette=6&number=20&amount=3200",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/bet/create?id_roulette=6&number=20&amount=3200",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"bet",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id_roulette",
+							"value": "6"
+						},
+						{
+							"key": "number",
+							"value": "20"
+						},
+						{
+							"key": "amount",
+							"value": "3200"
+						}
+					]
+				},
+				"description": "petición alternativa para realizar las pruebas del endpoint de agregar apuesta a una ruleta"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/roulette/close?id_roulette=2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/roulette/close?id_roulette=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"roulette",
+						"close"
+					],
+					"query": [
+						{
+							"key": "id_roulette",
+							"value": "6"
+						}
+					]
+				},
+				"description": "Enspoint para cerrar una ruleta\r\nRetornara el número ganador de la ruleta\r\nRetornara todas las apuesta relacionadas a la ruleta especificando si fueron ganadoras y cuanto fue el monto ganado"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/api/roulette/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/roulette/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"roulette",
+						"list"
+					]
+				},
+				"description": "Petición que ontiene el listado de todas las ruletas existentes y su estado actual"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
