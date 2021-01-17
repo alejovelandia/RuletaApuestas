@@ -1,0 +1,25 @@
+Generar imagen del proyecto y subirla a docker_hub
+Situarse en la carpeta src del proyecto, tener dockerfile y el archivo .jar en la misma carpeta
+
+Docker build -t alejoicecream/spring_boot_test:1.0.0 .
+
+Crear contenedor a partir de imagen
+
+docker run -p 8081:8081 –name spring_app --env SPRING_PROFILES_ACTIVE=docker alejoicecream/spring_boot_test:1.0.0    
+
+Crear contenedor redis
+docker run -p 6379:6379 --name some-redis -d redis 
+
+
+Crear subred de docker
+
+	docker network create myNetwork
+Agregar ambos contenedores a la nueva sub red
+	docker network connect myNetwork redis
+	docker network connect myNetwork spring_app
+
+Inspeccionar la nueva sub red
+docker network inspect myNetwork
+
+Probar conexión entre contenedores
+	docker exec -ti web1 ping web2
